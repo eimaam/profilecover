@@ -16,7 +16,7 @@ import {
   ALLOWED_IMAGE_TYPES,
   MAX_IMAGE_SIZE,
   DEFAULT_EMOJIS,
-} from "@/types/banner";
+} from "@/lib/utils";
 import { Button } from "../button/button";
 
 const AVAILABLE_TECHNOLOGIES = [
