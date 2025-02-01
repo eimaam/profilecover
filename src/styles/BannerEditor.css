@@ -1,0 +1,41 @@
+.custom-tabs .ant-tabs-nav {
+  background-color: #1b1b1d;
+  padding: 2px;
+  border-radius: 2rem;
+  margin-bottom: 24px;
+}
+
+.custom-tabs .ant-tabs-nav::before {
+  display: none;
+}
+
+.custom-tabs .ant-tabs-tab {
+  padding: 0;
+  margin: 0;
+}
+
+.custom-tabs .ant-tabs-tab + .ant-tabs-tab {
+  margin-left: 4px;
+}
+
+.custom-tabs .ant-tabs-tab-active .px-4 {
+  background-color: hsl(#121214);
+  color: hsl(#fafafa);
+  padding-inline: 1.5rem;
+padding-block: 5px;
+
+}
+
+:where(.dark) .custom-tabs .ant-tabs-tab-active .px-4 {
+  background-color: black;
+  color: white;
+}
+
+.custom-tabs .ant-tabs-ink-bar {
+  display: none;
+}
+
+.custom-tabs .ant-tabs-tab:hover .px-4 {
+  background-color: hsl(#1b1b1d);
+  color: hsl(#1b1b1d);
+}

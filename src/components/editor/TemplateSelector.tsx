@@ -1,6 +1,7 @@
 import { BannerTemplate } from '@/types/banner';
 import { cn } from '@/lib/utils';
 import { Card } from 'antd';
+import { AntdCard } from '../ui/AntdCard';
 
 interface TemplateSelectorProps {
   selected: BannerTemplate;
@@ -29,17 +30,17 @@ export function TemplateSelector({ selected, onSelect }: TemplateSelectorProps) 
   return (
     <div className="grid md:grid-cols-3 gap-4">
       {templates.map((template) => (
-        <Card
+        <AntdCard
           key={template.id}
           className={cn(
-            'p-4 cursor-pointer hover:border-primary transition-colors',
+            'cursor-pointer hover:border-primary transition-colors',
             selected === template.id && 'border-primary'
           )}
           onClick={() => onSelect(template.id)}
         >
           <h3 className="font-semibold">{template.name}</h3>
           <p className="text-sm text-muted-foreground">{template.description}</p>
-        </Card>
+        </AntdCard>
       ))}
     </div>
   );
