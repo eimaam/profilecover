@@ -1,7 +1,29 @@
 import { ConfigProvider, theme } from "antd";
 import { BannerEditor } from "./components/editor/BannerEditor";
+import { useEffect, useState } from "react";
 
 function App() {
+
+  const [isDarkMode, setIsDarkMode] = useState(true);
+
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    
+    if (isDarkMode) {
+      document.body.classList.add('dark');
+    } else {
+      document.body.classList.add('light');
+      document.body.classList.remove('dark');
+    }
+  }, [isDarkMode, mounted]);
+
+  useEffect(() => {
+    setMounted(true);
+  }, [theme]);
+
+  if (!mounted || !theme) return null;
+
   return (
     <ConfigProvider
       theme={{

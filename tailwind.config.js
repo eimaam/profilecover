@@ -15,9 +15,12 @@ export default {
         sm: 'calc(1rem - 4px)',
       },
       colors: {
-        // Dark colors as default
         background: '#121214',
         foreground: '#fafafa',
+        card: {
+          DEFAULT: '#1b1b1d',
+          foreground: '#fafafa',
+        },
         primary: {
           DEFAULT: '#f8c4dc',
           foreground: '#1a1a1a',
