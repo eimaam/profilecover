@@ -3,6 +3,8 @@ import { MinimalTemplate } from './templates/MinimalTemplate';
 import { GradientTemplate } from './templates/GradientTemplate';
 import { CodeTemplate } from './templates/CodeTemplate';
 import { AntdCard } from '../ui/AntdCard';
+import { Modal } from 'antd';
+import { useState } from 'react';
 
 interface BannerPreviewProps {
   template: BannerTemplate;
@@ -14,6 +16,8 @@ interface BannerPreviewProps {
 }
 
 export function BannerPreview(props: BannerPreviewProps) {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   const templates = {
     minimal: MinimalTemplate,
     gradient: GradientTemplate,
@@ -22,12 +26,33 @@ export function BannerPreview(props: BannerPreviewProps) {
 
   const SelectedTemplate = templates[props.template];
 
+  const handlePreviewClick = () => {
+    setIsModalOpen(true);
+  };
+
   return (
-    <AntdCard
-      className="aspect-[1200/630] grid grid-cols-1 w-full banner-preview"
-      animate={true}
-    >
-      <SelectedTemplate {...props} />
-    </AntdCard>
+    <>
+      <AntdCard
+        className="aspect-[1200/630] grid grid-cols-1 overflow-hidden w-full banner-preview cursor-pointer"
+        animate={true}
+        onClick={handlePreviewClick}
+      >
+        <SelectedTemplate {...props} />
+      </AntdCard>
+
+      <Modal
+        title="Banner Preview"
+        open={isModalOpen}
+        onCancel={() => setIsModalOpen(false)}
+        footer={null}
+        width="100%"
+        style={{ maxWidth: '90vw', margin: '16px auto' }}
+        bodyStyle={{ padding: 0, overflow: 'hidden' }}
+      >
+        <div className="aspect-[1200/630] w-full">
+          <SelectedTemplate {...props} />
+        </div>
+      </Modal>
+    </>
   );
 }

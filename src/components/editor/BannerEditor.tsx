@@ -19,6 +19,21 @@ import {
 } from "@/types/banner";
 import { Button } from "../button/button";
 
+const AVAILABLE_TECHNOLOGIES = [
+  'JavaScript', 'TypeScript', 'Python', 'Java', 'Go', 'Rust',
+  'React', 'Vue.js', 'Angular', 'Next.js', 'Svelte', 'Node.js',
+  'Django', 'Flask', 'Spring Boot', 'Express.js',
+  'PostgreSQL', 'MongoDB', 'Redis', 'MySQL',
+  'AWS', 'Azure', 'Google Cloud', 'Docker', 'Kubernetes',
+  'TensorFlow', 'PyTorch', 'scikit-learn',
+  'Swift', 'Kotlin', 'Flutter', 'React Native'
+];
+
+const getRandomTechnologies = (count: number) => {
+  const shuffled = [...AVAILABLE_TECHNOLOGIES].sort(() => 0.5 - Math.random());
+  return shuffled.slice(0, count);
+};
+
 export function BannerEditor() {
   const handleDownload = async (size?: { width: number; height: number }) => {
     const bannerRef = document.querySelector(".banner-preview");
@@ -58,9 +73,9 @@ export function BannerEditor() {
   );
   const [avatar, setAvatar] = useState<Avatar>({ type: "emoji", value: "👨‍💻" });
   const [techStack, setTechStack] = useState<TechStackDisplay>({
-    displayMode: "both",
-    showLogos: true,
-    items: ["TypeScript", "React", "Node.js"],
+    displayMode: 'names',
+    showLogos: false,
+    items: getRandomTechnologies(3),
   });
   const [socialLinks, setSocialLinks] = useState<SocialLinks>({});
 
@@ -89,16 +104,18 @@ export function BannerEditor() {
         </div>
 
         <div className="grid lg:grid-cols-[2fr,1fr] gap-8 white rounded-xl shadow-sm">
-          <div className="space-y-8">
-              <BannerPreview
-                template={selectedTemplate}
-                name={name}
-                role={role}
-                tagline={tagline}
-                avatar={avatar}
-                techStack={techStack}
-                socialLinks={socialLinks}
-              />
+          <div className="w-full overflow-x-auto">
+              <div className="min-w-[800px]">
+                <BannerPreview
+                  template={selectedTemplate}
+                  name={name}
+                  role={role}
+                  tagline={tagline}
+                  avatar={avatar}
+                  techStack={techStack}
+                  socialLinks={socialLinks}
+                />
+              </div>
           </div>
 
           <div>
