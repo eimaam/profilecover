@@ -1,6 +1,7 @@
 import { ConfigProvider, theme } from "antd";
 import { BannerEditor } from "./components/editor/BannerEditor";
 import { useEffect, useState } from "react";
+import Homepage from "./pages/homepage";
 
 function App() {
 
@@ -35,7 +36,7 @@ function App() {
         algorithm: theme.darkAlgorithm,
       }}
     >
-      <BannerEditor />
+      <Homepage />
     </ConfigProvider>
   );
 }

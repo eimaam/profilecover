@@ -1,33 +1,46 @@
-import { Modal } from 'antd'
-import React from 'react'
-import { BannerPreview } from '../editor/BannerPreview'
-import { SocialLinks } from '../editor/SocialLinks'
+import { Modal } from "antd";
+import React from "react";
+import { BannerPreview } from "../editor/BannerPreview";
+import { TechStackDisplayMode } from "../types";
+import { Avatar, BannerTemplate, SocialLinks, TechStackDisplay } from "@/types/banner";
 
-const SAMPLE_DATA = {
-    name: "John Doe",
-    role: "Senior Software Engineer",
-    tagline: "Whatever Happens, Happens.",
-    techStack: ['TypeScript', 'React', 'Node.js'],
-    socialLinks: {
-        github: "eimaam.dev",
-        linkedin: "eimaam",
-        twitter: "eimaam_d"
-    }
+interface ExamplesProps {
+  name: string;
+  role: string;
+  tagline: string;
+  techStack: TechStackDisplay;
+  socialLinks: SocialLinks;
+  avatar: Avatar;
 }
 
-const examples = () => {
+const SAMPLE_DATA:ExamplesProps = {
+  name: "John Doe",
+  avatar: {
+    type: "emoji",
+    value: "👨‍💻",
+  },
+  role: "Senior Software Engineer",
+  tagline: "Whatever Happens, Happens.",
+  techStack: {
+    displayMode: TechStackDisplayMode.HORIZONTAL,
+    showLogos: true,
+    items: ["TypeScript", "React", "Node.js"],
+  },
+  socialLinks: {
+    github: "eimaam.dev",
+    linkedin: "eimaam",
+    twitter: "eimaam_d",
+  },
+};
+
+const Examples = () => {
   return (
-    
-
-    <Modal className='w-full' open={true}>
-        <div className='flex items-center overflow-x-auto'>
-<BannerPreview
-            template={"minimal"}
-            {...SAMPLE_DATA}
-          />
-        </div>
+    <Modal className="w-full" open={true}>
+      <div className="flex items-center overflow-x-auto">
+        <BannerPreview template={"minimal"} {...SAMPLE_DATA} />
+      </div>
     </Modal>
-  )
-}
+  );
+};
 
-export default examples
+export default Examples;

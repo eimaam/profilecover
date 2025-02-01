@@ -1,4 +1,4 @@
-import { BannerTemplate, SocialLinks, TechStackDisplay } from '@/types/banner';
+import { Avatar, BannerTemplate, SocialLinks, TechStackDisplay } from '@/types/banner';
 import { MinimalTemplate } from './templates/MinimalTemplate';
 import { GradientTemplate } from './templates/GradientTemplate';
 import { CodeTemplate } from './templates/CodeTemplate';
@@ -13,6 +13,7 @@ interface BannerPreviewProps {
   tagline: string;
   techStack: TechStackDisplay;
   socialLinks: SocialLinks;
+  avatar: Avatar;
 }
 
 export function BannerPreview(props: BannerPreviewProps) {

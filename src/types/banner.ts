@@ -28,11 +28,3 @@ export interface GradientPreset {
   to: string;
   direction: string;
 }
-
-export const ALLOWED_IMAGE_TYPES = ['image/png', 'image/jpeg', 'image/webp'];
-export const MAX_IMAGE_SIZE = 3 * 1024 * 1024; // 3MB
-
-export const DEFAULT_EMOJIS = [
-  '👨‍💻', '👩‍💻', '🚀', '💻', '⚡️', '🎨', '🛠️', '🔧',
-  '🎯', '🌟', '💡', '🎮', '📱', '🤖', '🔥', '✨'
-];

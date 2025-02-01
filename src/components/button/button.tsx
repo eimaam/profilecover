@@ -54,7 +54,6 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       variant,
       size,
       fullWidth,
-      borderStyle,
       icon,
       htmlType = "button", 
       children,
@@ -67,7 +66,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     return (
       <AntButton
         className={cn(
-          buttonVariants({ variant, size, fullWidth, borderStyle, className }),
+          buttonVariants({ variant, size, fullWidth,  className }),
         )}
         size={antSize}
         icon={icon}

@@ -1,16 +1,13 @@
 import { X, Github, Linkedin, Twitter, Image as ImageIcon } from "lucide-react";
 import {
   Avatar,
-  DEFAULT_EMOJIS,
-  ALLOWED_IMAGE_TYPES,
-  MAX_IMAGE_SIZE,
   SocialLinks,
   TechStackDisplay,
   TechStackDisplayMode,
 } from "@/types/banner";
 import { GradientPicker } from "./GradientPicker";
 import { Badge, Checkbox, Input, Upload, message } from "antd";
-import { useForm } from "antd/es/form/Form";
+import { ALLOWED_IMAGE_TYPES, DEFAULT_EMOJIS, MAX_IMAGE_SIZE } from "@/lib/utils";
 
 interface EditorControlsProps {
   name: string;
@@ -51,7 +48,6 @@ export function EditorControls({
   onSocialLinksChange,
   onGradientChange,
 }: EditorControlsProps) {
-  const [form] = useForm();
 
   const handleAvatarUpload = async (file: File) => {
     if (!ALLOWED_IMAGE_TYPES.includes(file.type)) {
@@ -113,7 +109,7 @@ export function EditorControls({
           <div>
             <h4 className="text-sm mb-2">Emoji</h4>
             <div className="grid grid-cols-4 gap-2">
-              {DEFAULT_EMOJIS.map((emoji) => (
+              {DEFAULT_EMOJIS?.map((emoji) => (
                 <button
                   key={emoji}
                   onClick={() => onAvatarChange({ type: 'emoji', value: emoji })}
@@ -127,7 +123,7 @@ export function EditorControls({
           <div>
             <h4 className="text-sm mb-2">Custom Image</h4>
             <Upload.Dragger
-              accept={ALLOWED_IMAGE_TYPES.join(',')}
+              accept={ALLOWED_IMAGE_TYPES?.join(',')}
               beforeUpload={handleAvatarUpload}
               showUploadList={false}
               className="w-full"
@@ -202,8 +198,8 @@ export function EditorControls({
       <div className="space-y-4">
         <h3 className="font-medium">Tech Stack</h3>
         <Checkbox.Group
-          value={techStack.displayMode}
-          onChange={(value) => updateDisplayMode(value as TechStackDisplayMode)}
+          value={[techStack.displayMode]}
+          onChange={(value) => updateDisplayMode(value[0] as TechStackDisplayMode)}
           className="flex space-x-4"
         >
           <Checkbox value="both">Both</Checkbox>
