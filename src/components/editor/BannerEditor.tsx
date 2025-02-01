@@ -20,6 +20,32 @@ import {
 import { Button } from "../button/button";
 
 export function BannerEditor() {
+  const handleDownload = async (size?: { width: number; height: number }) => {
+    const bannerRef = document.querySelector(".banner-preview");
+    if (!bannerRef) return;
+
+    try {
+      const canvas = await html2canvas(bannerRef as HTMLElement, {
+        scale: 2,
+        useCORS: true,
+        allowTaint: true,
+        backgroundColor: null,
+        width: size?.width,
+        height: size?.height
+      });
+
+      const link = document.createElement("a");
+      const templateSuffix = selectedTemplate !== "minimal" ? `-${selectedTemplate}` : "";
+      const sizeSuffix = size ? `-${size.width}x${size.height}` : "";
+      
+      link.download = `${name.toLowerCase().replace(/\s+/g, "-")}${templateSuffix}${sizeSuffix}-banner.png`;
+      link.href = canvas.toDataURL("image/png", 1.0);
+      link.click();
+    } catch (error) {
+      message.error("Failed to export banner. Please try again.");
+      console.error("Banner export error:", error);
+    }
+  };
   const [selectedTemplate, setSelectedTemplate] =
     useState<BannerTemplate>("minimal");
   const [activeView, setActiveView] = useState<"template" | "sizes">(
@@ -39,7 +65,7 @@ export function BannerEditor() {
   const [socialLinks, setSocialLinks] = useState<SocialLinks>({});
 
   return (
-    <div className="w-full min-h-screen py-5 px-6">
+    <div className="w-full min-h-screen py-5 px-4 md:px-6">
       <div className="container !mx-auto">
         <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-5 mb-8">
           <div>
@@ -55,26 +81,14 @@ export function BannerEditor() {
             <Button
               variant="filled"
               icon={<DownloadOutlined />}
-              onClick={() => {
-                const bannerRef = document.querySelector(".aspect-[1200/630]");
-                if (bannerRef) {
-                  html2canvas(bannerRef as HTMLElement).then((canvas) => {
-                    const link = document.createElement("a");
-                    link.download = `${name
-                      .toLowerCase()
-                      .replace(/\s+/g, "-")}-banner.png`;
-                    link.href = canvas.toDataURL("image/png");
-                    link.click();
-                  });
-                }
-              }}
+              onClick={() => handleDownload()}
             >
               Export Banner
             </Button>
           </div>
         </div>
 
-        <div className="grid lg:grid-cols-[2fr,1fr] gap-8 white rounded-xl shadow-sm p-6">
+        <div className="grid lg:grid-cols-[2fr,1fr] gap-8 white rounded-xl shadow-sm">
           <div className="space-y-8">
               <BannerPreview
                 template={selectedTemplate}
@@ -85,7 +99,6 @@ export function BannerEditor() {
                 techStack={techStack}
                 socialLinks={socialLinks}
               />
-              
           </div>
 
           <div>
@@ -325,20 +338,18 @@ export function BannerEditor() {
                 />
                 ) : (
                   <div className="grid grid-cols-2 gap-4">
-                    {[
-                      { name: "LinkedIn Banner", size: "1584 x 396px" },
-                      { name: "Twitter Header", size: "1500 x 500px" },
-                      { name: "YouTube Channel Art", size: "2560 x 1440px" },
-                      { name: "Facebook Cover", size: "820 x 312px" },
-                      { name: "Instagram Post", size: "1080 x 1080px" },
-                      { name: "Custom Size", size: "Set your dimensions" },
-                    ].map((option) => (
+                    {[{ name: "LinkedIn Banner", size: "1584 x 396px", width: 1584, height: 396 },
+                      { name: "Twitter Header", size: "1500 x 500px", width: 1500, height: 500 },
+                      { name: "YouTube Channel Art", size: "2560 x 1440px", width: 2560, height: 1440 },
+                      { name: "Facebook Cover", size: "820 x 312px", width: 820, height: 312 },
+                      { name: "Instagram Post", size: "1080 x 1080px", width: 1080, height: 1080 }].map((option) => (
                       <AntdCard
                         key={option.name}
                         variant="outline"
                         size="sm"
                         hover
                         className="cursor-pointer"
+                        onClick={() => handleDownload({ width: option.width, height: option.height })}
                       >
                         <h3 className="font-medium">{option.name}</h3>
                         <p className="text-sm text-gray-500">{option.size}</p>

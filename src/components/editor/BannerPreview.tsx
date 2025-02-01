@@ -24,7 +24,7 @@ export function BannerPreview(props: BannerPreviewProps) {
 
   return (
     <AntdCard
-      className="aspect-[1200/630] w-full"
+      className="aspect-[1200/630] grid grid-cols-1 w-full banner-preview"
       animate={true}
     >
       <SelectedTemplate {...props} />
