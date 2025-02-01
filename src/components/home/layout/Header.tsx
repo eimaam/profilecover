@@ -1,3 +1,4 @@
+import { Navbar } from "@/components/ui/Navbar";
 import { Button } from "antd";
 import {
   ArrowRight,
@@ -9,6 +10,7 @@ import {
 export function Header() {
   return (
     <div className="">
+      <Navbar />
       <header className="container mx-auto px-4 py-24 md:py-28 flex flex-col items-center text-center gap-8">
         {/* TODO: uncomment once tier feature is ready */}
         {/* <Tag
