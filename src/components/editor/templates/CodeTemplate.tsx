@@ -73,7 +73,7 @@ export function CodeTemplate({
             {techStack.items.map((tech) => (
               <Badge
                 key={tech}
-                className="bg-primary/20 text-primary-default flex items-center gap-1.5 rounded px-1 py-1"
+                className="bg-primary/20 text-primary-default flex items-center justify-center gap-1.5 rounded px-1 py-1"
               >
                 {tech}
               </Badge>
