@@ -2,15 +2,13 @@ import { ConfigProvider, theme } from "antd";
 import { BannerEditor } from "./components/editor/BannerEditor";
 import { useEffect, useState } from "react";
 import Homepage from "./pages/homepage";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
-
   const [isDarkMode, setIsDarkMode] = useState(true);
-
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    
     if (isDarkMode) {
       document.body.classList.add('dark');
     } else {
@@ -36,7 +34,12 @@ function App() {
         algorithm: theme.darkAlgorithm,
       }}
     >
-      <Homepage />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Homepage />} />
+          <Route path="/editor" element={<BannerEditor />} />
+        </Routes>
+      </BrowserRouter>
     </ConfigProvider>
   );
 }
