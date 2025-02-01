@@ -1,5 +1,4 @@
 import { Navbar } from "@/components/ui/Navbar";
-import { Button } from "antd";
 import {
   ArrowRight,
   Linkedin,
@@ -7,6 +6,8 @@ import {
   Instagram,
 } from "lucide-react";
 import { useHeaderAnimation } from "@/lib/animations";
+import { Button } from "@/components/button/button";
+import { Link } from "react-router-dom";
 
 export function Header() {
   const { headerRef, titleRef, subtitleRef, ctaRef } = useHeaderAnimation();
@@ -24,22 +25,24 @@ export function Header() {
           Launch Offer: 40% Off Lifetime Access
         </Tag> */}
 
-        <h1 className="text-4xl md:text-6xl font-bold tracking-tight" ref={titleRef}>
+        <h1 className="text-2xl md:text-6xl font-bold tracking-tight" ref={titleRef}>
           <span>Create Stunning Tech-focused</span>
           <span className="text-primary block mt-2">Social Media Banners</span>
         </h1>
 
-        <p className="text-xl text-muted-foreground max-w-2xl" ref={subtitleRef}>
+        <p className="text-base md:text-xl text-muted-foreground max-w-2xl" ref={subtitleRef}>
           Design eye-catching profile headers/banners tailored for tech
           professionals like you! Stand out on LinkedIn, Twitter, and beyond.
         </p>
 
         <div className="flex flex-wrap justify-center gap-4 mt-4" ref={ctaRef}>
-          <Button type="primary" size="large">
-            Try for Free
-            <ArrowRight className="ml-2 w-4 h-4" />
-          </Button>
-          <Button size="large">View Examples</Button>
+          <Link to="/editor">
+            <Button type="primary">
+              Try for Free
+              <ArrowRight className="ml-2 w-4 h-4" />
+            </Button>
+          </Link>
+          <Button variant="outline">View Examples</Button>
         </div>
 
         <div className="flex gap-6 mt-8 text-muted-foreground">

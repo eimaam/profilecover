@@ -52,7 +52,7 @@ export function Footer() {
         
         <div className="flex flex-col md:flex-row justify-between items-center border-t border-border mt-12 pt-8">
           <p className="text-sm text-muted-foreground flex items-center">
-            Made with <Heart className="w-4 h-4 mx-1 text-red-500" /> for developers - eimaam.dev 
+            Made with <Heart className="w-4 h-4 mx-1 text-red-500" /> for devs & hey... everyone - eimaam.dev 
           </p>
           
           <div className="flex gap-4 mt-4 md:mt-0">
