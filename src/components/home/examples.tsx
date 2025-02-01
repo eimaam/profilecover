@@ -1,8 +1,7 @@
 import { Modal } from "antd";
 import React from "react";
 import { BannerPreview } from "../editor/BannerPreview";
-import { TechStackDisplayMode } from "../types";
-import { Avatar, BannerTemplate, SocialLinks, TechStackDisplay } from "@/types/banner";
+import { Avatar, SocialLinks, TechStackDisplay } from "@/types/banner";
 
 interface ExamplesProps {
   name: string;
@@ -22,7 +21,7 @@ const SAMPLE_DATA:ExamplesProps = {
   role: "Senior Software Engineer",
   tagline: "Whatever Happens, Happens.",
   techStack: {
-    displayMode: TechStackDisplayMode.HORIZONTAL,
+    displayMode: "names",
     showLogos: true,
     items: ["TypeScript", "React", "Node.js"],
   },
