@@ -6,10 +6,13 @@ import {
   Twitter,
   Instagram,
 } from "lucide-react";
+import { useHeaderAnimation } from "@/lib/animations";
 
 export function Header() {
+  const { headerRef, titleRef, subtitleRef, ctaRef } = useHeaderAnimation();
+
   return (
-    <div className="">
+    <div className="" ref={headerRef}>
       <Navbar />
       <header className="container mx-auto px-4 py-24 md:py-28 flex flex-col items-center text-center gap-8">
         {/* TODO: uncomment once tier feature is ready */}
@@ -21,17 +24,17 @@ export function Header() {
           Launch Offer: 40% Off Lifetime Access
         </Tag> */}
 
-        <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
-          Create Stunning Tech-focused
+        <h1 className="text-4xl md:text-6xl font-bold tracking-tight" ref={titleRef}>
+          <span>Create Stunning Tech-focused</span>
           <span className="text-primary block mt-2">Social Media Banners</span>
         </h1>
 
-        <p className="text-xl text-muted-foreground max-w-2xl">
+        <p className="text-xl text-muted-foreground max-w-2xl" ref={subtitleRef}>
           Design eye-catching profile headers/banners tailored for tech
           professionals like you! Stand out on LinkedIn, Twitter, and beyond.
         </p>
 
-        <div className="flex flex-wrap justify-center gap-4 mt-4">
+        <div className="flex flex-wrap justify-center gap-4 mt-4" ref={ctaRef}>
           <Button type="primary" size="large">
             Try for Free
             <ArrowRight className="ml-2 w-4 h-4" />

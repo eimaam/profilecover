@@ -1,12 +1,15 @@
 import React from 'react'
+import { useHowItWorksAnimation } from '@/lib/animations';
 
 const HowItWorks = () => {
+  const { sectionRef, stepsRef } = useHowItWorksAnimation();
+
   return (
-    <section className="container mx-auto px-4 py-24">
+    <section className="container mx-auto px-4 py-24" ref={sectionRef}>
     <h2 className="text-3xl font-bold text-center mb-16">
       How It Works
     </h2>
-    <div className="grid md:grid-cols-3 gap-8">
+    <div className="grid md:grid-cols-3 gap-8" ref={stepsRef}>
       <div className="text-center">
         <div className="text-4xl font-bold text-primary mb-4">
           <span role="img" aria-label="template">🎨</span> 1
