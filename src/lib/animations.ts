@@ -20,7 +20,7 @@ export const useHeaderAnimation = () => {
         duration: 1,
         ease: 'power4.out'
       })
-      .from(titleRef.current?.children || [], {
+      .from((titleRef.current as any)?.children || [], {
         opacity: 0,
         y: 50,
         duration: 0.8,
@@ -52,7 +52,7 @@ export const useFeaturesAnimation = () => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.from(featuresRef.current?.children || [], {
+      gsap.from((featuresRef.current as any)?.children || [], {
         scrollTrigger: {
           trigger: featuresRef.current,
           start: 'top 80%',
@@ -88,7 +88,7 @@ export const useHowItWorksAnimation = () => {
         ease: 'power3.out'
       });
 
-      gsap.from(stepsRef.current?.children || [], {
+      gsap.from((stepsRef.current as any)?.children || [], {
         scrollTrigger: {
           trigger: stepsRef.current,
           start: 'top 80%',
@@ -124,7 +124,7 @@ export const useTestimonialsAnimation = () => {
         ease: 'power3.out'
       });
 
-      gsap.from(cardsRef.current?.children || [], {
+      gsap.from((cardsRef.current as any)?.children || [], {
         scrollTrigger: {
           trigger: cardsRef.current,
           start: 'top 80%',
