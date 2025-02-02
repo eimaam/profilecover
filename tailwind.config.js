@@ -14,6 +14,9 @@ export default {
         md: 'calc(1rem - 2px)',
         sm: 'calc(1rem - 4px)',
       },
+      fontFamily: {
+        baiJamjuree: ['"Bai Jamjuree"', 'sans-serif'],
+      },
       colors: {
         background: '#121214',
         foreground: '#fafafa',
