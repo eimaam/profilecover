@@ -1,7 +1,7 @@
 import { Modal } from "antd";
 import React from "react";
-import { BannerPreview } from "../editor/BannerPreview";
-import { Avatar, SocialLinks, TechStackDisplay } from "@/types/banner";
+import { CoverPreview } from "../editor/CoverPreview";
+import { Avatar, SocialLinks, TechStackDisplay } from '@/types/cover';
 
 interface ExamplesProps {
   name: string;
@@ -36,7 +36,7 @@ const Examples = () => {
   return (
     <Modal className="w-full" open={true}>
       <div className="flex items-center overflow-x-auto">
-        <BannerPreview template={"minimal"} {...SAMPLE_DATA} />
+        <CoverPreview template={"minimal"} {...SAMPLE_DATA} />
       </div>
     </Modal>
   );

@@ -4,7 +4,7 @@ import {
   SocialLinks,
   TechStackDisplay,
   TechStackDisplayMode,
-} from "@/types/banner";
+} from "@/types/cover";
 import { GradientPicker } from "./GradientPicker";
 import { Badge, Checkbox, Input, Upload, message } from "antd";
 import { ALLOWED_IMAGE_TYPES, DEFAULT_EMOJIS, MAX_IMAGE_SIZE } from "@/lib/utils";

@@ -6,7 +6,7 @@ import { forwardRef } from "react";
 
 
 const buttonVariants = cva(
-  "bg-transparent shadow-none flex items-center justify-center gap-2 rounded-lg font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
+  "bg-transparent shadow-none flex items-center justify-center gap-2 rounded-md md:rounded-lg font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
   {
     variants: {
       variant: {
@@ -21,7 +21,7 @@ const buttonVariants = cva(
         filled: "bg-accent text-accent-foreground",
       },
       size: {
-        default: "h-10 px-5 py-2",
+        default: "h-8 md:h-10 px-4 py-1 md:px-5 md:py-2",
         sm: "h-8 px-4 py-2 text-sm",
         lg: "h-12 px-8 py-3 text-lg",
         icon: "h-10 w-10",
