@@ -1,7 +1,8 @@
 import { TechLogo } from '../TechLogo';
 import { SocialLinks } from '../SocialLinks';
-import { Avatar, SocialLinks as SocialLinksType, TechStackDisplay } from '@/types/banner';
+import { Avatar, SocialLinks as SocialLinksType, TechStackDisplay } from '@/types/cover';
 import { Badge } from 'antd';
+
 
 interface TemplateProps {
   name: string;
