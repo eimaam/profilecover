@@ -21,7 +21,7 @@ export const testimonials: ITestimonial[] = [
     content: "The template customization options are fantastic! I love how I can showcase my tech stack and social links in a clean, professional banner.",
     author: {
       name: "Oluwaseun Adebayo",
-      role: "Software Engineer @ Paystack",
+      role: "Software Engineer @ TechForge Solutions",
       avatar: "https://images.unsplash.com/photo-1506277886164-e25aa3f4ef7f?w=400&h=400&fit=crop"
     }
   },
@@ -61,7 +61,7 @@ export const testimonials: ITestimonial[] = [
     content: "Being able to showcase my tech stack with both logos and names makes my profile look more professional. The code template is a nice touch!",
     author: {
       name: "Tunde Oyewole",
-      role: "Frontend Developer @ Flutterwave",
+      role: "Frontend Developer @ ByteStack Labs",
       avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop"
     }
   },
@@ -69,7 +69,7 @@ export const testimonials: ITestimonial[] = [
     content: "The code template perfectly captures my developer identity. Love how it shows my tech stack in a creative way!",
     author: {
       name: "Aisha Mohammed",
-      role: "Backend Developer @ Andela",
+      role: "Backend Developer @ CodeSphere Technologies",
       avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop"
     }
   },
@@ -77,7 +77,7 @@ export const testimonials: ITestimonial[] = [
     content: "Finally found a tool that lets me create a professional GitHub profile banner that truly represents my work and skills.",
     author: {
       name: "David Okafor",
-      role: "DevOps Engineer @ Interswitch",
+      role: "DevOps Engineer @ CloudPeak Systems",
       avatar: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=400&fit=crop"
     }
   },
@@ -93,7 +93,7 @@ export const testimonials: ITestimonial[] = [
     content: "Clean, professional, and easy to customize. The minimal template is exactly what I needed for my portfolio.",
     author: {
       name: "Yemi Alade",
-      role: "Product Designer @ Kuda",
+      role: "Product Designer @ InnovatePro Digital",
       avatar: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=400&h=400&fit=crop"
     }
   }
