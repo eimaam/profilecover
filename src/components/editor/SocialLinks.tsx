@@ -1,5 +1,5 @@
 import { Github, Linkedin, Twitter } from 'lucide-react';
-import { SocialLinks as SocialLinksType } from '@/types/banner';
+import { SocialLinks as SocialLinksType } from '@/types/cover';
 import { cn } from '@/lib/utils';
 
 interface SocialLinksProps {

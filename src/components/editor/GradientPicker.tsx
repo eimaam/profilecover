@@ -1,4 +1,4 @@
-import { GradientPreset } from '@/types/banner';
+import { GradientPreset } from '@/types/cover';
 
 const GRADIENT_PRESETS: GradientPreset[] = [
   {

@@ -18,6 +18,7 @@ import {
 } from "@/lib/utils";
 import { Button } from "../button/button";
 import { CoverPreview } from "./CoverPreview";
+import { Footer } from "../home/layout/Footer";
 
 const AVAILABLE_TECHNOLOGIES = [
   'JavaScript', 'TypeScript', 'Python', 'Java', 'Go', 'Rust',
@@ -36,7 +37,7 @@ const getRandomTechnologies = (count: number) => {
 
 export function CoverEditor() {
   const handleDownload = async (size?: { width: number; height: number }) => {
-    const bannerRef = document.querySelector(".banner-preview");
+    const bannerRef = document.querySelector(".cover-preview");
     if (!bannerRef) return;
 
     try {
@@ -53,12 +54,12 @@ export function CoverEditor() {
       const templateSuffix = selectedTemplate !== "minimal" ? `-${selectedTemplate}` : "";
       const sizeSuffix = size ? `-${size.width}x${size.height}` : "";
       
-      link.download = `${name.toLowerCase().replace(/\s+/g, "-")}${templateSuffix}${sizeSuffix}-banner.png`;
+      link.download = `${name.toLowerCase().replace(/\s+/g, "-")}${templateSuffix}${sizeSuffix}-cover.png`;
       link.href = canvas.toDataURL("image/png", 1.0);
       link.click();
     } catch (error) {
-      message.error("Failed to export banner. Please try again.");
-      console.error("Banner export error:", error);
+      message.error("Failed to export cover. Please try again.");
+      console.error("Cover export error:", error);
     }
   };
   const [selectedTemplate, setSelectedTemplate] =
@@ -80,7 +81,8 @@ export function CoverEditor() {
   const [socialLinks, setSocialLinks] = useState<SocialLinks>({});
 
   return (
-    <div className="w-full min-h-screen py-5 px-4 md:px-6 !font-baiJamjuree">
+    <>
+    <div className="w-full min-h-screen py-5 px-4 md:px-6 !font-baiJamjuree pb-[300px]">
       <div className="container !mx-auto">
         <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-5 mb-8">
           <div>
@@ -98,7 +100,7 @@ export function CoverEditor() {
               icon={<DownloadOutlined />}
               onClick={() => handleDownload()}
             >
-              Export Banner
+              Export Cover
             </Button>
           </div>
         </div>
@@ -355,7 +357,7 @@ export function CoverEditor() {
                 />
                 ) : (
                   <div className="grid grid-cols-2 gap-4">
-                    {[{ name: "LinkedIn Banner", size: "1584 x 396px", width: 1584, height: 396 },
+                    {[{ name: "LinkedIn Cover", size: "1584 x 396px", width: 1584, height: 396 },
                       { name: "Twitter Header", size: "1500 x 500px", width: 1500, height: 500 },
                       { name: "YouTube Channel Art", size: "2560 x 1440px", width: 2560, height: 1440 },
                       { name: "Facebook Cover", size: "820 x 312px", width: 820, height: 312 },
@@ -378,7 +380,8 @@ export function CoverEditor() {
             </div>
           </div>
         </div>
-      
     </div>
+      <Footer />
+      </>
   );
 }

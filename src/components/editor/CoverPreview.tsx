@@ -1,4 +1,4 @@
-import { Avatar, BannerTemplate, SocialLinks, TechStackDisplay } from '@/types/banner';
+import { Avatar, CoverTemplate, SocialLinks, TechStackDisplay } from '@/types/cover';
 import { MinimalTemplate } from './templates/MinimalTemplate';
 import { GradientTemplate } from './templates/GradientTemplate';
 import { CodeTemplate } from './templates/CodeTemplate';
@@ -6,8 +6,8 @@ import { AntdCard } from '../ui/AntdCard';
 import { Modal } from 'antd';
 import { useState } from 'react';
 
-interface BannerPreviewProps {
-  template: BannerTemplate;
+interface CoverPreviewProps {
+  template: CoverTemplate;
   name: string;
   role: string;
   tagline: string;
@@ -16,7 +16,7 @@ interface BannerPreviewProps {
   avatar: Avatar;
 }
 
-export function CoverPreview(props: BannerPreviewProps) {
+export function CoverPreview(props: CoverPreviewProps) {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const templates = {

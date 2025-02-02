@@ -26,7 +26,7 @@ export function PricingSection() {
           price="$10"
           badge="Best Value"
           features={[
-            "Unlimited banner exports",
+            "Unlimited cover exports",
             "Premium tech templates",
             "Advanced customization",
             "4K export quality",
