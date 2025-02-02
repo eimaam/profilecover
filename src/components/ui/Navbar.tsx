@@ -22,7 +22,7 @@ export function Navbar() {
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           <Link to="/" className="text-2xl italic font-bold">
-            bannerfy
+            profilecover
           </Link>
 
           {/* Desktop Navigation */}
@@ -40,7 +40,7 @@ export function Navbar() {
             </div>
             <Link to="/editor">
               <Button type="primary" size="large">
-                Create Banner
+                Create Cover
               </Button>
             </Link>
           </div>
@@ -74,7 +74,7 @@ export function Navbar() {
               ))}
               <Link to="/editor" onClick={() => setIsMenuOpen(false)}>
                 <Button type="primary" size="large" block>
-                  Create Banner
+                  Create Cover
                 </Button>
               </Link>
             </div>

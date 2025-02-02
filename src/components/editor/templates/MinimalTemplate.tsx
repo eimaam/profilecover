@@ -15,7 +15,7 @@ interface TemplateProps {
 export function MinimalTemplate({ name, role, tagline, avatar, techStack, socialLinks }: TemplateProps) {
   return (
     <div className="h-full w-full text-accent bg-white p-16 flex flex-col justify-center">
-      <div className="max-w-3xl flex flex-row items-start gap-8">
+      <div className="max-w-3xl flex flex-row-reverse items-start gap-8">
         <div className="flex-shrink-0">
           {avatar.type === 'emoji' ? (
             <div className="w-24 h-24 rounded-full bg-gray-100 flex items-center justify-center text-4xl">

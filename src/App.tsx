@@ -1,5 +1,5 @@
 import { ConfigProvider, theme } from "antd";
-import { BannerEditor } from "./components/editor/BannerEditor";
+import { CoverEditor } from "./components/editor/CoverEditor";
 import { useEffect, useState } from "react";
 import Homepage from "./pages/homepage";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -37,7 +37,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Homepage />} />
-          <Route path="/editor" element={<BannerEditor />} />
+          <Route path="/editor" element={<CoverEditor />} />
         </Routes>
       </BrowserRouter>
     </ConfigProvider>

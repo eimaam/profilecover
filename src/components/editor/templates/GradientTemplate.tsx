@@ -15,7 +15,7 @@ interface TemplateProps {
 export function GradientTemplate({ name, role, tagline, avatar, techStack, socialLinks }: TemplateProps) {
   return (
     <div className="h-full w-full bg-gradient-to-br from-purple-600 to-blue-600 p-16 flex flex-col justify-center text-white">
-      <div className="max-w-3xl flex flex-row items-start gap-8">
+      <div className="max-w-3xl flex flex-row-reverse items-start gap-8">
         <div className="flex-shrink-0">
           {avatar.type === 'emoji' ? (
             <div className="w-24 h-24 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center text-4xl border border-white/20">

@@ -44,7 +44,7 @@ export function CodeTemplate({
         </pre>
       </div>
 
-      <div className="max-w-3xl relative flex flex-row items-start gap-8">
+      <div className="max-w-3xl ml-16 relative flex flex-row-reverse items-start gap-8">
         <div className="flex-shrink-0">
           {avatar.type === "emoji" ? (
             <div className="w-24 h-24 rounded-lg bg-primary/10 backdrop-blur-sm flex items-center justify-center text-4xl border border-primary/20">

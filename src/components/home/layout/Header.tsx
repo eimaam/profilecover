@@ -27,12 +27,12 @@ export function Header() {
 
         <h1 className="text-2xl md:text-6xl font-bold tracking-tight" ref={titleRef}>
           <span>Create Stunning Tech-focused</span>
-          <span className="text-primary block mt-2">Social Media Banners</span>
+          <span className="text-primary block mt-2">Social Media Covers</span>
         </h1>
 
         <p className="text-base md:text-xl text-muted-foreground max-w-2xl" ref={subtitleRef}>
-          Design eye-catching profile headers/banners tailored for tech
-          professionals like you! Stand out on LinkedIn, Twitter, and beyond.
+          Design eye-catching profile headers/covers tailored for tech
+          professionals like you! Stand out on LinkedIn, X (fka Twitter), Facebook and beyond.
         </p>
 
         <div className="flex flex-wrap justify-center gap-4 mt-4" ref={ctaRef}>

@@ -13,9 +13,9 @@ export function Footer() {
       <div className="container mx-auto px-4 py-16">
         <div className="grid md:grid-cols-4 gap-12">
           <div className="space-y-4">
-            <h3 className="text-lg font-semibold italic">bannerfy</h3>
+            <h3 className="text-lg font-semibold italic">profilecover</h3>
             <p className="text-sm text-muted-foreground">
-              Create professional social media banners/headers tailored for tech professionals.
+              Create professional profile headers and covers tailored for tech professionals.
             </p>
           </div>
           

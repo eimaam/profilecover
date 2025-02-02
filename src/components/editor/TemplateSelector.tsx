@@ -1,11 +1,11 @@
-import { BannerTemplate } from '@/types/banner';
+import { CoverTemplate } from '@/types/cover';
 import { cn } from '@/lib/utils';
 import { Card } from 'antd';
 import { AntdCard } from '../ui/AntdCard';
 
 interface TemplateSelectorProps {
-  selected: BannerTemplate;
-  onSelect: (template: BannerTemplate) => void;
+  selected: CoverTemplate;
+  onSelect: (template: CoverTemplate) => void;
 }
 
 const templates = [
