@@ -121,7 +121,7 @@ export function CoverEditor() {
           </div>
 
           <div>
-            <AntdCard variant="default">
+            <AntdCard variant="outlined">
               <Tabs
                 defaultActiveKey="basic"
                 className="custom-tabs"
@@ -364,7 +364,7 @@ export function CoverEditor() {
                       { name: "Instagram Post", size: "1080 x 1080px", width: 1080, height: 1080 }].map((option) => (
                       <AntdCard
                         key={option.name}
-                        variant="outline"
+                        variant="outlined"
                         size="sm"
                         hover
                         className="cursor-pointer"

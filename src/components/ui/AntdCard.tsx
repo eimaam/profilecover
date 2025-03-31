@@ -11,8 +11,9 @@ const cardVariants = cva(
       variant: {
         default: 'bg-background border border-border',
         ghost: 'bg-transparent border-none shadow-none',
-        outline: 'bg-transparent border border-border',
+        outlined: 'bg-transparent border border-border', // Changed from 'outline' to 'outlined'
         elevated: 'bg-background shadow-lg border-none',
+        borderless: 'bg-background border-none', // Added to match Ant Design's type
       },
       size: {
         default: 'p-0',
@@ -39,8 +40,9 @@ const motionVariants: Variants = {
   tap: { scale: 0.98 },
 };
 
+// Fix interface conflict by renaming the imported CardProps
 interface CardProps
-  extends Omit<AntCardProps, 'size'>,
+  extends Omit<AntCardProps, 'size' | 'variant'>,
     VariantProps<typeof cardVariants> {
   className?: string;
   animate?: boolean;
@@ -61,6 +63,13 @@ const AntdCard = forwardRef<HTMLDivElement, CardProps>(
     },
     ref
   ) => {
+    // Map our custom variant to Ant Design's expected variant
+    const getAntVariant = () => {
+      if (variant === 'outlined' || variant === 'borderless') {
+        return variant;
+      }
+      return undefined; // Default to undefined for other variants
+    };
 
     return (
       <motion.div
@@ -73,6 +82,7 @@ const AntdCard = forwardRef<HTMLDivElement, CardProps>(
         <AntCard
           ref={ref}
           className={cn(cardVariants({ variant, size, fullWidth, className }))}
+          bordered={variant !== 'borderless' && variant !== 'ghost'}
           {...props}
         >
           {children}
